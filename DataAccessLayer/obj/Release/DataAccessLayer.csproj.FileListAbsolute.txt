@@ -1,0 +1,15 @@
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\DataAccessLayer.dll.config
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\DataAccessLayer.dll
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityFramework.dll
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityLayer.dll
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityLayer.pdb
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityLayer.dll.config
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityFramework.xml
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\obj\Release\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CopyComplete
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\obj\Release\DataAccessLayer.dll
+C:\Users\ufukc\OneDrive\Belgeler\Visual Studio 2022\MVC-Blog\DataAccessLayer\obj\Release\DataAccessLayer.pdb

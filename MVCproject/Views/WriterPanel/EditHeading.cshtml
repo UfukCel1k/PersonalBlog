@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "EditHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditHeading", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.HeadingDate)
+        @Html.HiddenFor(x => x.HeadingID)
+        @Html.HiddenFor(x => x.WriterID)
+        @Html.Label("Başık Adı")
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HeadingName, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Kategori ID")
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryID, "", new { @class = "text-danger" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

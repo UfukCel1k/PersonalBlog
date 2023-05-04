@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "EditAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Admin Günceleme Sayfası</h2>
+
+@*BeginForm() = Eklemeler, güncellemeler işlemlerinde kullanılan html yardımcısıdır. Üç tane parametresi vardır. Birinci parametre üzerinde çalıştığımız ActionResult ismi, ikinci parametre üzerinde çalıştığımız Controller ismi, üçüncü parametre FormMethod'un değeri yani post ya da get işlemi*@
+
+@using (Html.BeginForm("EditAdmin", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.AdminID, new { @class = "form-control" })
+        @Html.Label("Admin Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AdminUserName, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Admin şifre")
+        @Html.TextAreaFor(x => x.AdminPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AdminPassword, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Admin Rol")
+        @Html.TextAreaFor(x => x.AdminRole, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AdminRole, "", new { @class = "text-danger" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+
