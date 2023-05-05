@@ -35,15 +35,8 @@ namespace EntityLayer.Concrete
 
         public bool WriterStatus { get; set; }
 
-        //Writer ve Heading tablosu arasında ilişki kuruluyor.
-        //Hangi sınıfla ilişkili olunacaksa ICollection<> içeisine o sınıf yazılır.
-        //ICollection = koleksiyon
         public ICollection<Heading> Headings { get; set; }
 
-        //Yazarlarların yazılarını görebilmek için aşagıdakini yazıyoruz.
-        //Writer ve Content tablosu arasında ilişki kuruluyor.
-        //Hangi sınıfla ilişkili olunacaksa ICollection<> içeisine o sınıf yazılır.
-        //ICollection = koleksiyon
         public ICollection<Content> Contents { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IImageFileService
     {
-        //Resimleri listelememizi sağlar.
         List<ImageFile> GetList();
     }
 }

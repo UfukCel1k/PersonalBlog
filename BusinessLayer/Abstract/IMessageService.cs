@@ -13,17 +13,12 @@ namespace BusinessLayer.Abstract
 
         List<Message> GetListSendBox(string p);
 
-        //Mesajlara ekleme yapmamızı sağlar.
         void MessageAdd(Message message);
 
-        //Silme işlemi ID e göre yapmamızı sağlar.
-        //GetByID id ye göre değişken alıcak.
         Message GetByID(int id);
 
-        //Silme işlemi yapmamızı sağlar.
         void MessageDelete(Message message);
 
-        //Güncelleme işlemi yapmamızı sağlar.
         void MessageUpdate(Message message);
     }
 }

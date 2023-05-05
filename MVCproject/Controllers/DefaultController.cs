@@ -9,7 +9,6 @@ using System.Web.Mvc;
 namespace MVCproject.Controllers
 {
 
-    //Vitrin bölümü tüm başlıklar bu sayfada gözükür.
     [AllowAnonymous]
     public class DefaultController : Controller
     {
@@ -18,14 +17,12 @@ namespace MVCproject.Controllers
 
         public ActionResult Headings()
         {
-            //Database deki verileri hm ye eşitliyor ve GetList metoduyla çağırıyoruz.
             var headinglist = hm.GetList();
             return View(headinglist);
         }
 
         public PartialViewResult Index(int id = 0)
         {
-            //Bütün değerleri çekiyoruz.
             var contentlist = cm.GetListByHeadingID(id);
             return PartialView(contentlist);
         }

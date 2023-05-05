@@ -10,8 +10,6 @@ namespace DataAccessLayer.Concrete
 {
     public class Context:DbContext
     {
-        //Aşağıya yazılmış olan DbSet türündeki propertyleri sql'e birer tablo olarak yansıtılıcak.
-        public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Content> Contents { get; set; }

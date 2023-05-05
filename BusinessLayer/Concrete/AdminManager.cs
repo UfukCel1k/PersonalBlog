@@ -36,8 +36,6 @@ namespace BusinessLayer.Concrete
 
         public Admin GetByID(int id)
         {
-            //_categoryDal sınıfı GenericRepository deki değerleri alıyor.
-            //x öyleki CategoryID id'den gelen değere eşit olmalı.
             return _adminDal.Get(x => x.AdminID == id);
         }
 

@@ -1,6 +1,4 @@
 ﻿@using EntityLayer.Concrete
-@*Model verileri listelemek için kullandığımız bileşendir.*@
-@*Burdaki değer kategorinin listesini tutar*@
 @model  List<Category>
 @{
     ViewBag.Title = "Index";
@@ -22,7 +20,6 @@
         <tr>
             <td>@item.CategoryID</td>
             <td>@item.CategoryName</td>
-            @*AdminCategory içerisinde yer alan DeleteCategory gidiceksin. Giderken bir de id götüreceksin.*@
             <td><a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
             <td><a href="/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a></td>
         </tr>

@@ -38,7 +38,6 @@ namespace MVCproject.Controllers
             return PartialView();
         }
 
-        //Mesaj içeriğini id'ye göre getitiyoruz.
         public ActionResult GetContactMessage(int id)
         {
             var messagevalues = mm.GetByID(id);
@@ -64,22 +63,17 @@ namespace MVCproject.Controllers
 
             ValidationResult results = messagevalidator.Validate(p);
 
-            //Eğerki results değeri doğrulanmışsa ekleme işlemi gerçekleşir.
             if (results.IsValid)
             {
                 p.SenderMail =sender;
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToLongDateString());
                 mm.MessageAdd(p);
-                //Ekleme işlemini gerçekleştikten sonra bizi tanımlamış olduğumuz SendBox metoduna yönlendir.
                 return RedirectToAction("SendBox");
             }
             else
             {
-                //Hata mesajlarını tutacağımız diziyi oluşturuyoruz.
-                //results dan gelen Errors lardan bir döngü oluşturucak
                 foreach (var item in results.Errors)
                 {
-                    //Modelin durumuna hataları ekle(property nin ismi), (hatanın kendisi)
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }

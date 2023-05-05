@@ -20,9 +20,6 @@ namespace EntityLayer.Concrete
 
         public bool CategoryStatus { get; set; }
 
-        //Category ve Heading tablosu arasında ilişki kuruluyor.
-        //Hangi sınıfla ilişkili olunacaksa ICollection<> içeisine o sınıf yazılır.
-        //Kategori başlıkları belirleniyor
         public ICollection<Heading> Headings { get; set; }
     }
 }

@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    //EfCategoryDal, GenericRepository içerisindeki Category sınıfında yer alan komutu kullanıcak.
-    //GenericRepository<Category> yanına ICategoryDal yazıyoruz. Çünkü ICategoryDal daki değerleride çekmek istiyoruz.
     public class EfCategoryDal:GenericRepository<Category>,ICategoryDal
     {
     }

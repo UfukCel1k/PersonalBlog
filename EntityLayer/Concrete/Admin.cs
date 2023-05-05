@@ -22,4 +22,3 @@ namespace EntityLayer.Concrete
         public string AdminRole { get; set; }
     }
 }
-//Admin tablosunun veri tabanında kullanıcı adı ve şifreyi hashle.

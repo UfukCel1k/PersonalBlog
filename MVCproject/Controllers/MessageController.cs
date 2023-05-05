@@ -16,14 +16,12 @@ namespace MVCproject.Controllers
         MessageManager mm = new MessageManager(new EFMessageDal());
         MessageValidator messagevalidator = new MessageValidator();
 
-        //Mesajları listeliyoruz.
         public ActionResult Inbox(string p)
         {
             var messagelist = mm.GetListBox(p);
             return View(messagelist);
         }
 
-        //Mesaj içeriğini id'ye göre getitiyoruz.
         public ActionResult GetContactMessage(int id)
         {
             var messagevalues = mm.GetByID(id);
@@ -36,7 +34,6 @@ namespace MVCproject.Controllers
             return View(messagevalues);
         }
 
-        //Gönderilen mesajları listeliyoruz.
         public ActionResult SendBox(string p)
         {
             var messagevalues = mm.GetListSendBox(p);
@@ -54,21 +51,16 @@ namespace MVCproject.Controllers
         {
             ValidationResult results = messagevalidator.Validate(p);
 
-            //Eğerki results değeri doğrulanmışsa ekleme işlemi gerçekleşir.
             if (results.IsValid)
             {
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToLongDateString());
                 mm.MessageAdd(p);
-                //Ekleme işlemini gerçekleştikten sonra bizi tanımlamış olduğumuz SendBox metoduna yönlendir.
                 return RedirectToAction("SendBox");
             }
             else
             {
-                //Hata mesajlarını tutacağımız diziyi oluşturuyoruz.
-                //results dan gelen Errors lardan bir döngü oluşturucak
                 foreach (var item in results.Errors)
                 {
-                    //Modelin durumuna hataları ekle(property nin ismi), (hatanın kendisi)
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }

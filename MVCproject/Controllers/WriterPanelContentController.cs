@@ -19,10 +19,8 @@ namespace MVCproject.Controllers
         {
             Context c = new Context();
 
-            //p parametresinden gelen WriterMail değeri ile 
             p = (string)Session["WriterMail"];
 
-            // Bizim dışardan gönderdiğimiz parametreye eşit olan mail adresi içerisinde id sini seç.
             var writeridinfo = c.Writers.Where(X => X.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
 
             var contentvalues = cm.GetListByWriter(writeridinfo);
@@ -40,13 +38,10 @@ namespace MVCproject.Controllers
         [HttpPost]
         public ActionResult AddContent(Content p)
         {
-            //p parametresinden gelen WriterMail değeri ile 
             string mail = (string)Session["WriterMail"];
 
-            // Bizim dışardan gönderdiğimiz parametreye eşit olan mail adresi içerisinde id sini seç.
             var writeridinfo = c.Writers.Where(X => X.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
 
-            // Başlığa giriş yapıldığında anlık tarih bilgisinide verir.
             p.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.WriterID = writeridinfo;
             p.ContentStatus = true;

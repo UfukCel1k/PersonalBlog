@@ -31,33 +31,21 @@ namespace MVCproject.Controllers
             return View(writervalue);
         }
 
-        //Writer sınfından p parametresi.
-        //Writer sınıfında p parametresi türetiyoruz.
-        //Siteyle etkileşime geçince post metodu çalışır.
         [HttpPost]
         public ActionResult WriterProfile(Writer p)
         {
 
-            //Validate() geçerliliği kontrol eder.
-            //results isminde bir ValidationResult değişkeni oluşturduk.
-            //results WriterValidator dan değerlerle kontrolünü(Validate) yapıyoruz.
             ValidationResult results = writerValidator.Validate(p);
 
-            //Eğerki results değeri doğrulanmışsa ekleme işlemi gerçekleşir.
             if (results.IsValid)
             {
-                //p den gelen değeri güncelliyoruz.
                 wm.WriterUpdate(p);
-                //Ekleme işlemini gerçekleştikten sonra bizi tanımlamış olduğumuz GetCategoryList metoduna yönlendir.
                 return RedirectToAction("AllHeading", "WriterPanel");
             }
             else
             {
-                //Hata mesajlarını tutacağımız diziyi oluşturuyoruz.
-                //results dan gelen Errors lardan bir döngü oluşturucak
                 foreach (var item in results.Errors)
                 {
-                    //Modelin durumuna hataları ekle(property nin ismi), (hatanın kendisi)
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
@@ -99,7 +87,6 @@ namespace MVCproject.Controllers
         [HttpGet]
         public ActionResult EditHeading(int id)
         {
-            //Güncellenecek olan değeri çağırıyoruz.
             var headingvalue = hm.GetByID(id);
             return View(headingvalue);
         }
@@ -113,17 +100,14 @@ namespace MVCproject.Controllers
 
         public ActionResult DeleteHeading(int id)
         {
-            //ID ye göre bul.
             var headingvalue = hm.GetByID(id);
             headingvalue.HeadingStatus = false;
             hm.HeadingDelete(headingvalue);
             return RedirectToAction("MyHeading");
         }
 
-        // Burdaki p = 1 ifadesi sayfan numarası kaçtan başlıyacağını ifade ediyor.
         public ActionResult AllHeading(int p = 1)
         {
-            //Tüm başlıkları getirir.
             var headings = hm.GetList().ToPagedList(p,4);
             return View(headings);
         }

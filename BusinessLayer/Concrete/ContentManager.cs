@@ -45,8 +45,6 @@ namespace BusinessLayer.Concrete
             return _ContentDal.List(x => x.ContentValue.Contains(p));
         }
 
-        //Bir parametreye bağlı olarak listeleme işlemi yapmak için gerekli şartı çağırmamız gerekiyorz.
-        //Filtreleme işlemi.
         public List<Content> GetListByHeadingID(int id)
         {
             return _ContentDal.List(x => x.HeadingID==id);

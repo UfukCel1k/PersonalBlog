@@ -13,7 +13,6 @@ namespace BusinessLayer.Concrete
     {
         IImageFileDal _ImageFileDal;
 
-        //Constructor metodunu hazır getirmek için ImageFileManager üzerine (ctrl + .) yaptıktan sonra (Generate constructor) seçiyoruz. Çıkan ekran ok diyerek constructor ı oluştutyoruz.
         public ImageFileManager(IImageFileDal ımageFileDal)
         {
             _ImageFileDal = ımageFileDal;

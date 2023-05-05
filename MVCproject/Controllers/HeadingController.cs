@@ -13,7 +13,6 @@ namespace MVCproject.Controllers
 {
     public class HeadingController : Controller
     {
-        //HeadingManager(); içerisin parametre değeri veriyoruz.
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
         public ActionResult Index()
@@ -37,7 +36,6 @@ namespace MVCproject.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading p)
         {
-            //Bugünün kısa tarihini getirir.
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             hm.HeadingAdd(p);
             return RedirectToAction("Index");
@@ -46,7 +44,6 @@ namespace MVCproject.Controllers
         [HttpGet]
         public ActionResult EditHeading(int id)
         {
-            //Güncellenecek olan değeri çağırıyoruz.
             var headingvalue = hm.GetByID(id);
             return View(headingvalue);
         }
@@ -60,7 +57,6 @@ namespace MVCproject.Controllers
 
         public ActionResult DeleteHeading(int id)
         {
-            //ID ye göre bul.
             var headingvalue = hm.GetByID(id);
             headingvalue.HeadingStatus = false;
             hm.HeadingDelete(headingvalue);
