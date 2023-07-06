@@ -1,4 +1,4 @@
-# MVC-BlogWebsite
+# PersonalBlog
 ## Kullanılan Araçlar & Alt Yapılar & Teknolojiler
 - Migrations
 - Katmanlı Mimari
